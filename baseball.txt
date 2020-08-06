@@ -1,0 +1,328 @@
+UnArchive L1
+1->L1(2)
+If L1(1)=2.9876345:Then
+	2->L1(2
+	UnArchive Str1
+	UnArchive |LAIS
+	UnArchive |LB1
+	UnArchive |LB2
+	UnArchive |LB3
+	UnArchive |LHIT
+	UnArchive |LINN
+	UnArchive |LOUT
+	UnArchive |LSTR
+	UnArchive |LURS
+Else
+	1->|LINN(1
+End
+If |LINN(1)<=1:Then
+	0->|LOUT(1
+	0->|LAIS(1
+	0->|LURS(1
+	1->|LINN(1
+	0->|LB3(1
+	0->|LB2(1
+	0->|LB1(1
+End
+Lbl thetatheta
+ClrHome
+If L1(1)!=2.9876345:Then
+	Disp "ENTER TEAM NAME.
+	Disp "THREE LETTERS OR
+	Disp "NUMBERS ONLY.
+	Input "?",Str1
+	0->|LLLL(1)
+	If |LLLL(1)!=0:Then
+		If length(Str1)!=3
+		Goto thetatheta
+		1->X
+		UnArchive Str0
+		Repeat X=39
+			If sub(Str1,1,1)!=sub(Str0,X,1)
+			Goto thetatheta
+			X+1->X
+		End
+		1->X
+		Repeat X=39
+			If sub(Str1,2,1)!=sub(Str0,X,1)
+			Goto thetatheta
+			1+X->X
+		End
+		1->X
+		Repeat X=39
+			If sub(Str1,3,1)!=sub(Str0,X,1)
+			Goto thetatheta
+			1+X->X
+		End
+		Archive Str0
+	End
+	ClrHome
+End
+AxesOff
+CoordOff
+Horiz
+ZSquare
+Lbl A1
+ClrDraw
+Line(0,~10,10,0
+Line(10,0,0,10
+Line(0,10,~10,0
+Line(~10,0,0,~10
+Pxl-On(29,47
+Pxl-On(28,46
+Pxl-On(28,47
+Pxl-On(28,48
+Pxl-On(27,45
+Pxl-On(27,46
+Pxl-On(27,47
+Pxl-On(27,48
+Pxl-On(27,49
+Pxl-On(26,45
+Pxl-On(26,46
+Pxl-On(26,47
+Pxl-On(26,48
+Pxl-On(26,49
+Pxl-On(25,46
+Pxl-On(25,47
+Pxl-On(25,48
+Pxl-On(24,47
+
+If |LB1(1)=1:Then
+	Pxl-On(15,61
+	Pxl-On(14,60
+	Pxl-On(15,60
+	Pxl-On(16,60
+	Pxl-On(13,59
+	Pxl-On(14,59
+	Pxl-On(15,59
+	Pxl-On(16,59
+	Pxl-On(17,59
+	Pxl-On(14,58
+	Pxl-On(15,58
+	Pxl-On(16,58
+	Pxl-On(15,57
+End
+Pxl-On(13,58
+Pxl-On(17,58
+Pxl-On(14,57
+Pxl-On(16,57
+Pxl-On(15,56
+
+If |LB2(1)=1:Then
+	Pxl-On(1,47
+	Pxl-On(2,46
+	Pxl-On(2,47
+	Pxl-On(2,48
+	Pxl-On(3,45
+	Pxl-On(3,46
+	Pxl-On(3,47
+	Pxl-On(3,48
+	Pxl-On(3,49
+	Pxl-On(4,46
+	Pxl-On(4,47
+	Pxl-On(4,48
+	Pxl-On(5,47
+End
+Pxl-On(4,45
+Pxl-On(4,49
+Pxl-On(5,46
+Pxl-On(5,48
+Pxl-On(6,47
+If |LB3(1)=1:Then
+	Pxl-On(15,33
+	Pxl-On(14,34
+	Pxl-On(15,34
+	Pxl-On(16,34
+	Pxl-On(13,35
+	Pxl-On(14,35
+	Pxl-On(15,35
+	Pxl-On(16,35
+	Pxl-On(17,35
+	Pxl-On(14,36
+	Pxl-On(15,36
+	Pxl-On(16,36
+	Pxl-On(15,37
+End
+Pxl-On(13,36
+Pxl-On(17,36
+Pxl-On(14,37
+Pxl-On(16,37
+Pxl-On(15,38
+Text(0,0,"STRIKES-
+Text(7,0,"OUTS-
+Text(0,71,Str1
+Text(0,83,"-
+Text(7,71,"CPU-
+Text(14,0,"INN-
+Text(14,16,|LINN(1
+If L1(2)=1
+0->|LSTR(1)
+Lbl AA
+1->L1(2
+Text(0,32,|LSTR(1
+Text(7,20,|LOUT(1
+Text(0,87,|LURS(1
+Text(7,87,|LAIS(1
+ClrHome
+Disp "1-FASTBALL
+Disp "2-CURVEBALL
+Disp "3-CHANGE-UP
+Input "4-SLIDER SWING=",S
+If S=pi:Then
+	Menu("SAVE?","NO",YX,"YES",XY
+	Lbl XY
+	Archive |LAIS
+	Archive |LB1
+	Archive |LB2
+	Archive |LB3
+	Archive |LHIT
+	Archive |LINN
+	Archive |LOUT
+	Archive |LSTR
+	Archive |LURS
+	2.9876345->L1(1
+	Archive L1
+	ClrDraw
+	Full
+	ClrHome
+	Stop
+End
+randInt(1,4)->L1(1
+If L1(1)!=S:Then
+	ClrHome
+	|LSTR+1->|LSTR
+	If |LSTR(1)=3:Then
+		Lbl OT
+		Output(4,5,"YOUR OUT!
+		For(X,1,300
+		End
+		|LOUT+1->|LOUT
+		If |LOUT(1)=3:Then
+			randInt(1,9)->A
+			If A=6 or A=7 or A=8
+			|LAIS+1->|LAIS
+			If A=9
+			|LAIS+2->|LAIS
+			|LINN+1->|LINN
+			0->|LB1(1
+			0->|LB2(1
+			0->|LB3(1
+			If |LINN(1)>=10 and |LURS(1)!=|LAIS(1):Then
+				ClrHome
+				If |LURS(1)>|LAIS(1)
+				Output(4,5,"YOU WIN
+				If |LURS(1)<|LAIS(1
+				Output(2,5,"YOU LOSE
+				Output(3,7,|LURS(1
+				Output(3,9,"-
+				Output(3,11,|LAIS(1
+				Pause 
+				Lbl YX
+				0->L1(1
+				ClrHome
+				ClrDraw
+				DelVar |LAIS:DelVar |LB1:DelVar |LB2:DelVar |LB3:DelVar |LHIT:DelVar |LINN:DelVar |LOUT:DelVar |LSTR:DelVar |LURS:DelVar S
+				Full
+				Stop
+			End
+			0->|LOUT(1)
+		End
+		Goto A1
+	End
+	Output(3,5,"STRIKE!
+	For(X,1,300
+	End
+	Goto AA
+End
+"---------------------------------------------
+If L1(1)=S:Then
+	randInt(1,52)->|LHIT(1
+	ClrHome
+	If |LHIT(1)<=24:Then
+		If |LB3(1)=1:Then
+			1+|LURS(1)->|LURS(1
+			0->|LB3(1
+		End
+		If |LB2(1)=1:Then
+			1->|LB3(1
+			0->|LB2(1
+		End
+		If |LB1(1)=1
+		1->|LB2(1
+		1->|LB1(1
+		Output(4,5,"SINGLE
+		For(X,1,300
+		End
+		Goto A1
+	End
+	If |LHIT(1)>=25 and |LHIT(1)<=32:Then
+		If |LB3(1)=1:Then
+			1+|LURS(1)->|LURS(1)
+			0->|LB3(1
+		End
+		If |LB2(1)=1:Then
+			1+|LURS(1)->|LURS(1)
+			0->|LB2(1
+		End
+		If |LB1(1)=1:Then
+			0->|LB1(1
+			1->|LB3(1
+		End
+		1->|LB2(1
+		Output(4,5,"DOUBLE
+		For(X,1,300
+		End
+		Goto A1
+	End
+	If |LHIT(1)>=33 and |LHIT(1)<=35:Then
+		If |LB3(1)=1:Then
+			1+|LURS->|LURS
+			0->|LB3(1
+		End
+		If |LB2(1)=1:Then
+			1+|LURS->|LURS
+			0->|LB2(1
+		End
+		If |LB1(1)=1:Then
+			1+|LURS->|LURS
+			0->|LB1(1
+		End
+		1->|LB3(1
+		Output(4,5,"TRIPLE
+		For(X,1,300
+		End
+		Goto A1
+	End
+	If |LHIT(1)=36:Then
+		If |LB3(1)=1
+		1+|LURS->|LURS
+		If |LB2(1)=1
+		1+|LURS->|LURS
+		If |LB1(1)=1
+		1+|LURS(1)->|LURS(1
+		1+|LURS(1)->|LURS(1
+		0->|LB3(1
+		0->|LB2(1
+		0->|LB1(1
+		Output(4,5,"HOME RUN!
+		For(X,1,300
+		End
+		Goto A1
+	End
+	If |LHIT(1)>=37 and |LHIT(1)<=44:Then
+		If |LSTR(1)<2
+		1+|LSTR(1)->|LSTR(1
+		Output(4,5,"FOUL!
+		For(X,1,300
+		End
+		Goto AA
+	End
+	If |LHIT(1)>=45 and |LHIT(1)<=48:Then
+		Output(3,5,"FLY OUT
+		Goto OT
+	End
+	If |LHIT(1)>=49:Then
+		Output(3,5,"GROUND OUT
+		Goto OT
+	End
+End

@@ -1,0 +1,53 @@
+ClrHome
+Disp "PERM
+Disp "ORDER
+Disp "N!/(N-R)!
+Disp "
+Disp "COMB
+Disp "N!/(N-R)!R!
+Pause 
+ClrHome
+Disp "2[e]=sum(DEG(V))
+Disp "
+Disp "DEMORGAN
+Disp "!(A and B)
+Disp "!A or !B
+Pause 
+ClrHome
+Disp "IMPLICATION
+Disp "A->B
+Disp "!A or B
+Pause 
+ClrHome
+Disp "EQUIV
+Disp "A<->B
+Pause "(A->B) and (B->A)
+Pause "(A or !B) and (!A or B)
+Pause "(A and B) or (!A and !B)
+ClrHome
+Disp "COROLLARY
+Disp "!V[P->Q]
+Disp "E[P and !Q
+Pause 
+ClrHome
+Disp "MOD PONENS
+Disp "P->Q
+Disp "P
+Pause "Q
+ClrHome
+Disp "MOD TOLLENS
+Disp "P->Q
+Disp "!Q
+Pause "!P
+ClrHome
+Disp "DISJUN SYLL
+Disp "P or Q
+Disp "!P
+Pause "Q
+ClrHome
+Disp "HYPOTHETICAL
+Disp "P->Q
+Disp "Q->R
+Pause "P->R
+ClrHome
+Disp 

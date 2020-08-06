@@ -1,0 +1,160 @@
+AxesOff
+FnOff 
+PlotsOff 
+ZStandard
+ClrDraw
+DelVar L1
+If L=0
+20->L
+L-M->L
+While L<0
+	1+L->L
+	M-1->M
+End
+Text(7,10,"USE UP AND DOWN ARROWS
+Text(14,16,"TO CHANGE YOUR BET
+Text(27,50,M
+Text(48,30,"MONEY LEFT:
+Text(48,70,L
+While 1
+	getKey->N
+	While N=0
+		getKey->N
+	End
+	If N=25 and M<10 and L>0:Then
+		1+M->M
+		L-1->L
+		Text(27,50,"      
+		Text(27,50,M
+		Text(48,70,"         
+		Text(48,70,L
+	End
+	If N=34 and M>1:Then
+		M-1->M
+		L+1->L
+		Text(27,50,"       
+		Text(27,50,M
+		Text(48,70,"         
+		Text(48,70,L
+	End
+	If N=105:Then
+		
+		ClrDraw
+		"//GEN CARDS
+		1->A
+		Text(1,30,"LOADING...
+		randInt(1,52,10)->L1
+		Repeat A=0
+			0->A
+			If L1(1)=L1(2):Then
+				randInt(1,52)->L1(2
+				1->A
+			End
+			If L1(1)=L1(3) or L1(2)=L1(3):Then
+				randInt(1,52)->L1(3
+				1->A
+			End
+			If L1(1)=L1(4) or L1(2)=L1(4) or L1(3)=L1(4):Then
+				randInt(1,52)->L1(4
+				1->A
+			End
+			If L1(1)=L1(5) or L1(2)=L1(5) or L1(3)=L1(5) or L1(4)=L1(5):Then
+				randInt(1,52)->L1(5)
+				1->A
+			End
+			If L1(1)=L1(6) or L1(2)=L1(6) or L1(3)=L1(6) or L1(4)=L1(6) or L1(5)=L1(6):Then
+				randInt(1,52)->L1(6
+				1->A
+			End
+			If L1(1)=L1(7) or L1(2)=L1(7) or L1(3)=L1(7) or L1(4)=L1(7) or L1(5)=L1(7) or L1(6)=L1(7):Then
+				randInt(1,52)->L1(7
+				1->A
+			End
+			If L1(1)=L1(8) or L1(2)=L1(8) or L1(3)=L1(8) or L1(4)=L1(8) or L1(5)=L1(8) or L1(6)=L1(8) or L1(7)=L1(8):Then
+				randInt(1,52)->L1(8)
+				1->A
+			End
+			If L1(1)=L1(9) or L1(2)=L1(9) or L1(3)=L1(9) or L1(4)=L1(9) or L1(5)=L1(9) or L1(6)=L1(9) or L1(7)=L1(9) or L1(8)=L1(9):Then
+				randInt(1,52)->L1(9
+				1->A
+			End
+			If L1(1)=L1(10) or L1(2)=L1(10) or L1(3)=L1(10) or L1(4)=L1(10) or L1(5)=L1(10) or L1(6)=L1(10) or L1(7)=L1(10) or L1(8)=L1(10) or L1(9)=L1(10):Then
+				randInt(1,52)->L1(10
+				1->A
+			End
+		End
+		prgmVID2
+		DelVar A:DelVar B:DelVar C:DelVar Z
+		{0,0,0,0,0}->L2
+		0->A
+		While 1
+			getKey->A
+			While A=0
+				getKey->A
+			End
+			If A=11 and L2(1)=0:Then
+				Text(57,1,"HOLD
+				1->L2(1)
+				0->A
+			End
+			If A=12 and L2(2)=0:Then
+				Text(57,20,"HOLD
+				1->L2(2)
+				0->A
+			End
+			If A=13 and L2(3)=0:Then
+				Text(57,40,"HOLD
+				1->L2(3
+				0->A
+			End
+			If A=14 and L2(4)=0:Then
+				Text(57,59,"HOLD
+				1->L2(4
+				0->A
+			End
+			If A=15 and L2(5)=0:Then
+				Text(57,79,"HOLD
+				1->L2(5
+				0->A
+			End
+			If A=11 and L2(1)=1:Then
+				Text(57,1,"               
+				0->L2(1
+			End
+			If A=12 and L2(2)=1:Then
+				Text(57,20,"               
+				0->L2(2
+			End
+			If A=13 and L2(3)=1:Then
+				Text(57,40,"               
+				0->L2(3
+			End
+			If A=14 and L2(4)=1:Then
+				Text(57,59,"               
+				0->L2(4
+			End
+			If A=15 and L2(5)=1:Then
+				Text(57,79,"               
+				0->L2(5
+			End
+			If A=105:Then
+				If L2(1)=0
+				L1(6)->L1(1
+				If L2(2)=0
+				L1(7)->L1(2
+				If L2(3)=0
+				L1(8)->L1(3
+				If L2(4)=0
+				L1(9)->L1(4
+				If L2(5)=0
+				L1(10)->L1(5
+				ClrDraw
+				prgmVID2
+				prgmVID3
+				For(X,1,500
+				End
+				prgmVIDPOKER
+			End
+		End
+	End
+End

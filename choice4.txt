@@ -1,0 +1,120 @@
+22->dim(|LC)
+0->Q
+ClrHome
+Menu("PICK ONE","COMPUTER",A,"TELEVISION",B
+Lbl A
+1+|LC(1)->|LC(1
+1+Q->Q
+Goto 0
+Lbl B
+1+|LC(2)->|LC(2
+Lbl 0
+Menu("PICK ONE","AM",C,"FM",D
+Lbl C
+1+|LC(3)->|LC(3
+Goto 1
+Lbl D
+1+|LC(4)->|LC(4
+1+Q->Q
+Lbl 1
+Menu("PICK ONE","SUCK",E,"BLOW",F
+Lbl E
+1+|LC(5)->|LC(5
+Goto 2
+Lbl F
+1+|LC(6)->|LC(6
+1+Q->Q
+Lbl 2
+Menu("PICK ONE","ANT",G,"AUNT",H
+Lbl G
+1+|LC(7)->|LC(7
+1+Q->Q
+Goto 3
+Lbl H
+1+|LC(8)->|LC(8
+Lbl 3
+Menu("QUIZZ/TEST","QUEST",I,"TIZZ",J
+Lbl I
+1+|LC(9)->|LC(9
+Goto 4
+Lbl J
+1+|LC(10)->|LC(10
+1+Q->Q
+Lbl 4
+Menu("PICK ONE","REDRUM",K,"RACECAR",L
+Lbl K
+1+|LC(11)->|LC(11
+1+Q->Q
+Goto 5
+Lbl L
+1+|LC(12)->|LC(12
+Lbl 5
+Menu("PICK ONE","RAAK",M,"ROCK",N
+Lbl M
+1+|LC(13)->|LC(13
+Goto 6
+Lbl N
+1+|LC(14)->|LC(14
+1+Q->Q
+Lbl 6
+Menu("PICK ONE","SPRING",O,"SUMMER",P
+Lbl O
+1+|LC(15)->|LC(15
+1+Q->Q
+Goto 7
+Lbl P
+1+|LC(16)->|LC(16
+Lbl 7
+Menu("PICK ONE","MEW",Q,"MEWTWO",R
+Lbl Q
+1+|LC(17)->|LC(17
+Goto 8
+Lbl R
+1+|LC(18)->|LC(18
+1+Q->Q
+Lbl 8
+Menu("PICK ONE","P",S,"Z",T
+Lbl S
+1+|LC(19)->|LC(19
+Goto 9
+Lbl T
+1+|LC(20)->|LC(20
+1+Q->Q
+Lbl 9
+Menu("BITCH","HAMILL",U,"SLADE",V
+Lbl U
+1+|LC(21)->|LC(21
+1+Q->Q
+Goto thetatheta
+Lbl V
+1+|LC(22)->|LC(22
+Lbl thetatheta
+ClrDraw
+0->Xmin
+22->Xmax
+0->Ymin
+10->Ymax
+0->B
+Repeat B=22
+	1+B->B
+	Line(B,0,B,|LC(B
+End
+For(X,1,500
+End
+0->P
+Repeat P=3
+	RecallPic 1
+	For(X,1,50
+	End
+	ClrDraw
+	If Q=11:Then
+		Text(30,30,"YOU WIN!
+	Else
+		Text(30,30,"YOU LOSE!
+	End
+	For(X,1,50
+	End
+	P+1->P
+End
+Text(40,30,Q
+Text(40,35,"/11

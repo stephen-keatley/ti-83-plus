@@ -1,0 +1,45 @@
+ClrHome
+Output(4,5,"A LILROO 
+Output(5,4,"PRODUCTION
+2->A
+Repeat A=0
+	A-1->A
+	Output(1,16,A
+	For(X,1,350)
+	End
+End
+ClrHome
+Output(4,4,"CREATED BY
+Output(5,3,"STEVE KLEEMAN
+2->A
+Repeat A=0
+	A-1->A
+	Output(1,16,A
+	For(X,1,350
+	End
+End
+ClrHome
+ClrDraw
+Text(12,30,"MIDPOINT
+Text(25,20,"(X1+X2,Y1+Y2)
+Line(~7.5,0,~2,0
+Line(~1,0,5.5,0
+Text(32,30,"2
+Text(32,55,"2
+For(X,1,900
+End
+ClrDraw
+ClrHome
+Input "X1? ",A
+Input "X2? ",B
+Input "Y1? ",C
+Input "Y2? ",D
+(A+B)/2->E
+(C+D)/2->F
+ClrHome
+Fix 2
+Output(4,1,"M=(     ,     )
+Output(4,4,E
+Output(4,10,F
+Float
+Stop

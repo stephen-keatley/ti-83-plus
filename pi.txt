@@ -1,0 +1,11 @@
+pi/6
+sqrt(3)/2,1/2
+pi/4
+sqrt(2)/2,sqrt(2)/2
+pi/3
+1/2,sqrt(3)/3
+pi/2
+0,1
+
+cos(X)^^2=1+cos(2X)/2
+sin(X)^^2=1-cos(2X)/2

@@ -1,0 +1,20 @@
+ClrHome
+Output(4,5,"A LILROO 
+Output(5,4,"PRODUCTION
+3->A
+Repeat A=0
+	A-1->A
+	Output(1,16,A
+	For(X,1,350)
+	End
+End
+ClrHome
+Output(4,4,"CREATED BY
+Output(5,3,"STEVE KLEEMAN
+3->A
+Repeat A=0
+	A-1->A
+	Output(1,16,A
+	For(X,1,350
+	End
+End

@@ -1,0 +1,34 @@
+ClrDraw
+If L=0
+20->L
+Text(7,10,"USE UP AND DOWN ARROWS
+Text(14,16,"TO CHANGE YOUR BET
+L-M->L
+Text(27,50,M
+Text(48,30,"MONEY LEFT:
+Text(48,70,L
+While 1
+	getKey->N
+	While N=0
+		getKey->N
+	End
+	If N=25 and M<10 and L>0:Then
+		1+M->M
+		L-1->L
+		Text(27,50,"      
+		Text(27,50,M
+		Text(48,70,"         
+		Text(48,70,L
+	End
+	If N=34 and M>1:Then
+		M-1->M
+		L+1->L
+		Text(27,50,"       
+		Text(27,50,M
+		Text(48,70,"         
+		Text(48,70,L
+	End
+	If N=105:Then
+		prgmVIDPOKER
+	End
+End

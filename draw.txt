@@ -1,0 +1,98 @@
+66->A:68->B:75->C:66->D:1->E:70->F:65->G:1->H:66->I:61->J:1->K:67->L:49->M:58->N:73->O:66->P:1->Q:80->R:47->S:1->T:1->U
+ClrDraw
+0->theta
+AxesOff
+PlotsOff 
+FnOff 
+ZStandard
+Line(~10,10,~1,10
+Line(~1,10,~1,~10
+Line(~1,~10,~10,~10
+Line(~10,~10,~10,10
+Line(~7,10,~7,~10
+Line(~4,10,~4,~10
+Line(~10,7,~1,7
+Line(~10,4,~1,4
+Line(~10,1,~1,1
+Line(~10,~2,~1,~2
+Line(~10,~5,~1,~5
+Line(~10,~7.5,~1,~7.5
+Lbl 0
+Text(1,4,A
+Text(1,18,B
+Text(1,32,C
+Text(11,4,D
+Text(11,20,E
+Text(11,32,F
+Text(21,4,G
+Text(21,20,H
+Text(21,32,I
+Text(30,4,J
+Text(30,20,K
+Text(30,32,L
+Text(39,4,M
+Text(39,18,N
+Text(39,32,O
+Text(47,4,P
+Text(47,20,Q
+Text(47,32,R
+Text(55,4,S
+Text(55,20,T
+Text(55,34,U
+Text(50,50,"TOTAL:
+Text(50,73,A+B+C+D+E+F+G+H+I+J+K+L+M+N+O+P+Q+R+S+T+U
+Text(20,70,.325A+.325D+.25G+.25B+.125M
+While 1
+	getKey->X
+	While X=0
+		getKey->X
+	End
+	If X=45:Then
+		ClrDraw
+		AxesOn
+		DelVar A:DelVar B:DelVar C:DelVar D:DelVar E:DelVar F:DelVar G:DelVar H:DelVar I:DelVar J:DelVar K:DelVar L:DelVar M:DelVar N:DelVar O:DelVar P:DelVar Q:DelVar R:DelVar S:DelVar T:DelVar U:DelVar X:DelVar Y:DelVar Z:DelVar theta
+		ClrHome
+		Stop
+	End
+	If X=23 and theta=1:Then
+		2->Y
+		1->Z
+		Repeat Z>55
+			Text(Z,Y,"            
+			Text(Z,Y+14,"            
+			Text(Z,Y+28,"            
+			If Z=39 or Z=47 or Z=55
+			Z+8->Z
+			If Z=21 or Z=30
+			Z+9->Z
+			If Z=1 or Z=11
+			Z+10->Z
+		End
+		0->theta
+		Goto 0
+	End
+	If X=22:Then
+		1->theta
+		Text(1,2,"ATT
+		Text(1,16,"HIT
+		Text(1,30,"MNE
+		Text(11,2,"STR
+		Text(11,16,"            
+		Text(11,30,"SMT
+		Text(21,2,"DEF
+		Text(21,16,"            
+		Text(21,30,"FIS
+		Text(30,2,"RNG
+		Text(30,16,"            
+		Text(30,30,"COK
+		Text(39,2,"PRA
+		Text(39,16,"CRF
+		Text(39,30,"FIR
+		Text(47,2,"MAG
+		Text(47,16,"            
+		Text(47,30,"WOD
+		Text(55,4,"RC
+		Text(55,16,"            
+		Text(55,30,"            
+	End
+End

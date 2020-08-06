@@ -1,0 +1,36 @@
+ClrHome
+Output(4,4,"CREATED BY
+Output(5,3,"STEVE KLEEMAN
+For(X,1,500
+End
+ClrHome
+Disp "QUADRATIC FORM.K
+Disp "ENTER A"
+Input A
+Disp "ENTER B"
+Input B
+Disp "ENTER C"
+Input C
+ClrHome
+(~B+sqrt((B)^^2-4AC))/(2A)
+Disp Ans>Frac
+(~B-sqrt((B)^^2-4AC))/(2A)
+Disp Ans>Frac
+Disp "
+B^^2-4AC->D
+B->I
+If B>=0:Then
+	2->Z
+Else
+	1->Z
+	I*~1->I
+End
+While iPart(I/10>1
+	I/10->I
+	Z+1->Z
+End
+Output(3,1,(~B
+Output(3,(Z+1),"+/-sqrt(
+Output(3,(Z+1+5),D
+Output(3,12,")/
+Output(3,14,2A

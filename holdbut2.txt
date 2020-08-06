@@ -1,0 +1,234 @@
+ClrHome
+FnOff 
+AxesOff
+ClrDraw
+0->A
+0->B
+15->dim(|LNAME
+5->dim(|LHIGH
+
+
+
+
+
+
+1->I
+"0"->Str0
+Disp "PLEASE WAIT...
+While I<16
+	|LNAME(I)->X
+	If X=0
+	Str0+" "->Str0
+	If X=1
+	Str0+"A"->Str0
+	If X=2
+	Str0+"B"->Str0
+	If X=3
+	Str0+"C"->Str0
+	If X=4
+	Str0+"D"->Str0
+	If X=5
+	Str0+"E"->Str0
+	If X=6
+	Str0+"F"->Str0
+	If X=7
+	Str0+"G"->Str0
+	If X=8
+	Str0+"H"->Str0
+	If X=9
+	Str0+"I"->Str0
+	If X=10
+	Str0+"J"->Str0
+	If X=11
+	Str0+"K"->Str0
+	If X=12
+	Str0+"L"->Str0
+	If X=13
+	Str0+"M"->Str0
+	If X=14
+	Str0+"N"->Str0
+	If X=15
+	Str0+"O"->Str0
+	If X=16
+	Str0+"P"->Str0
+	If X=17
+	Str0+"Q"->Str0
+	If X=18
+	Str0+"R"->Str0
+	If X=19
+	Str0+"S"->Str0
+	If X=20
+	Str0+"T"->Str0
+	If X=21
+	Str0+"U"->Str0
+	If X=22
+	Str0+"V"->Str0
+	If X=23
+	Str0+"W"->Str0
+	If X=24
+	Str0+"X"->Str0
+	If X=25
+	Str0+"Y"->Str0
+	If X=26
+	Str0+"Z"->Str0
+	I+1->I
+End
+sub(Str0,2,3)->Str1
+sub(Str0,5,3)->Str2
+sub(Str0,8,3)->Str3
+sub(Str0,11,3)->Str4
+sub(Str0,14,3)->Str5
+DelVar Str0:DelVar I:DelVar X
+
+
+
+
+
+Text(1,1,"THE OBJECT IS TO HOLD THE
+Text(7,1,"RIGHT ARROW KEY FOR AS LONG
+Text(14,1,"AS POSSIBLE. PRESS ENTER
+Text(21,1,"TO BEGIN. HIGH SCORES AND
+Text(28,1,"INITIALS ARE KEPT.
+Pause 
+ClrDraw
+Text(1,1,"HOLD RIGHT TO BEGIN
+Text(13,10,"SCORE
+For(X,200,0,~1
+	Text(1,70,X
+End
+While 1
+	For(X,1,10
+	End
+	getKey->A
+	If A=26:Then
+		1+B->B
+		Text(20,10,B
+	End
+	If A!=26:Then
+		If B>|LHIGH(5):Then
+			ClrDraw
+			Repeat length(Str9)=3
+				ClrHome
+				Disp "3 LETTERS ONLY
+				Input "NAME:",Str9
+			End
+			B->|LHIGH(5
+			Str9->Str5
+			5->C
+		End
+		If B>|LHIGH(4):Then
+			|LHIGH(4)->|LHIGH(5
+			B->|LHIGH(4
+			Str4->Str5
+			Str9->Str4
+			4->C
+		End
+		If B>|LHIGH(3):Then
+			|LHIGH(3)->|LHIGH(4
+			B->|LHIGH(3
+			Str3->Str4
+			Str9->Str3
+			3->C
+		End
+		If B>|LHIGH(2):Then
+			|LHIGH(2)->|LHIGH(3
+			B->|LHIGH(2
+			Str2->Str3
+			Str9->Str2
+			2->C
+		End
+		If B>|LHIGH(1):Then
+			|LHIGH(1)->|LHIGH(2
+			B->|LHIGH(1
+			Str1->Str2
+			Str9->Str1
+			1->C
+		End
+		ClrDraw
+		Text(1,1,"1)  ",|LHIGH(1
+		Text(1,40,Str1
+		Text(7,1,"2)  ",|LHIGH(2
+		Text(7,40,Str2
+		Text(14,1,"3)  ",|LHIGH(3
+		Text(14,40,Str3
+		Text(21,1,"4)  ",|LHIGH(4
+		Text(21,40,Str4
+		Text(27,1,"5)  ",|LHIGH(5
+		Text(27,40,Str5
+		ClrHome
+		
+		
+		
+		
+		
+		
+		
+		Str1+Str2+Str3+Str4+Str5->Str0
+		1->X
+		Text(40,10,"SAVING...
+		While X<16
+			sub(Str0,X,1)->Str6
+			If Str6="A
+			1->|LNAME(X
+			If Str6="B
+			2->|LNAME(X
+			If Str6="C
+			3->|LNAME(X
+			If Str6="D
+			4->|LNAME(X
+			If Str6="E
+			5->|LNAME(X
+			If Str6="F
+			6->|LNAME(X
+			If Str6="G
+			7->|LNAME(X
+			If Str6="H
+			8->|LNAME(X
+			If Str6="I
+			9->|LNAME(X
+			If Str6="J
+			10->|LNAME(X
+			If Str6="K
+			11->|LNAME(X
+			If Str6="L
+			12->|LNAME(X
+			If Str6="M
+			13->|LNAME(X
+			If Str6="N
+			14->|LNAME(X
+			If Str6="O
+			15->|LNAME(X
+			If Str6="P
+			16->|LNAME(X
+			If Str6="Q
+			17->|LNAME(X
+			If Str6="R
+			18->|LNAME(X
+			If Str6="S
+			19->|LNAME(X
+			If Str6="T
+			20->|LNAME(X
+			If Str6="U
+			21->|LNAME(X
+			If Str6="V
+			22->|LNAME(X
+			If Str6="W
+			23->|LNAME(X
+			If Str6="X
+			24->|LNAME(X
+			If Str6="Y
+			25->|LNAME(X
+			If Str6="Z
+			26->|LNAME(X
+			X+1->X
+		End
+		DelVar Str0:DelVar Str1:DelVar Str2:DelVar Str3:DelVar Str4:DelVar Str5:DelVar X
+		Text(40,40,"COMPLETE!
+		
+		
+		
+		
+		DelVar Str1:DelVar Str2:DelVar Str3:DelVar Str4:DelVar Str5:DelVar Str9:DelVar A:DelVar B:DelVar X:DelVar Y:DelVar C:DelVar Str6
+		Stop
+	End
+End

@@ -1,0 +1,51 @@
+ClrHome
+Output(4,4,"CREATED BY
+Output(5,3,"STEVE KLEEMAN
+For(X,1,500
+End
+ClrHome
+Output(1,3,"PYTHAGOREAN
+Output(4,5,"A^^2+B^^2=C^^2
+Output(8,3,"PRESS ENTER
+Pause 
+Menu("SOLVE FOR WHAT?","A OR B",1,"C",2)
+End
+Lbl 2
+ClrHome
+Disp "SOLVE FOR C."
+Disp " "
+Disp "ENTER A"
+Input A
+Disp A^^2
+Disp "ENTER B"
+Input B
+Disp B^^2
+Disp " "
+A^^2+B^^2->C
+ClrHome
+Output(2,8,C
+Output(2,4,"C=sqrt(
+Output(4,5,"OR
+sqrt(C)->C
+Output(6,6,C
+Output(6,4,"C=
+Stop
+Lbl 1
+ClrHome
+Disp "SOLVE FOR A OR B"
+Disp " "
+Disp "ENTER A OR B"
+Input A
+Disp A^^2
+Disp "ENTER C"
+Input C
+Disp C^^2
+C^^2-A^^2->B
+ClrHome
+Output(2,8,B
+Output(2,2,"ANS=sqrt(
+Output(4,3,"OR
+sqrt(B)->B
+Output(6,6,B
+Output(6,2,"ANS=
+Stop

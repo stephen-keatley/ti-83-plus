@@ -1,0 +1,35 @@
+ClrHome
+Output(4,5,"A LILROO 
+Output(5,4,"PRODUCTION
+2->A
+Repeat A=0
+	A-1->A
+	Output(1,16,A
+	For(X,1,350)
+	End
+End
+ClrHome
+Output(4,4,"CREATED BY
+Output(5,3,"STEVE KLEEMAN
+2->A
+Repeat A=0
+	A-1->A
+	Output(1,16,A
+	For(X,1,350
+	End
+End
+ClrDraw
+ClrHome
+Disp "DISTANCE FORMULA"
+Disp " "
+Disp "ENTER X"
+Input A
+Disp "ENTER X2"
+Input B
+Disp "ENTER Y"
+Input C
+Disp "ENTER Y2"
+Input D
+sqrt((B-A)^^2+(D-C)^^2)
+Disp Ans
+

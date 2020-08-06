@@ -1,0 +1,17 @@
+"PICK NUMBERS
+
+randInt(1,50,20)->|LCARDS
+
+Disp "1
+
+|LCARDS->|LCSORT
+SortA(|LCSORT
+
+"IF SAME NUMBER ADD ONE
+For(I,1,19
+	If |LCSORT(I)=|LCSORT(I+1):Then
+		|LCSORT(I+1)+1->|LCSORT(I+1
+		If |LCSORT(I)>50
+		1->|LCSORT(I
+	End
+End

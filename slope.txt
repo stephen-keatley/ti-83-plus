@@ -1,0 +1,16 @@
+ClrHome
+Output(4,4,"CREATED BY
+Output(5,3,"STEVE KLEEMAN
+For(X,1,500
+End
+ClrHome
+Disp "SLOPE FORMULA"
+Disp " "
+Disp "(Y1-Y2)/(X1-X2)"
+Disp " "
+Input "X1=",A
+Input "Y1=",B
+Input "X2=",C
+Input "Y2=",D
+((D-B)/(C-A))->E
+Disp "SLOPE IS",E

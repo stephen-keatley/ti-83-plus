@@ -1,0 +1,15 @@
+X*Y=X1*Y+X*Y1
+X/Y=(X1*Y+X*Y1)/(Y^^2)
+LIM(H->0) F(X+H)-F(X)/H
+sin(X)1=cos(X
+cos(X)1=~sin(X
+tan(X)1=SEC(X
+CSC(X)1=~CSC(X)*COT(X
+SEC(X)1=SEC(X)*TAN(X
+COT(X)1=~CSC^^2(X
+L(X)=F(A)+F(A)1*(X-A)
+cosh(X)1=sinh(X
+sinh(X)1=cosh(X
+cosh(X)=([e]^X+[e]^~X)/2
+sinh(X)=([e]^X-[e]^~X)/2
+cosh(X)^^2-sinh(X)^^2=1

@@ -1,0 +1,54 @@
+ClrHome
+0->A
+0->B
+0->X
+Output(1,1,"PRESS ENTER.
+Output(2,1,"WAIT FOR
+Output(3,1,"COUNTDOWN.
+Output(4,1,"REPEATEDLY PRESS
+Output(5,1,"2ND AS MANY
+Output(6,1,"TIMES AS
+Output(7,1,"POSSIBLE.
+Pause 
+ClrHome
+Output(1,1,"READY...
+For(X,1,500
+End
+ClrHome
+Output(2,1,"SET...
+For(X,1,500
+End
+ClrHome
+Output(3,1,"GO!
+Output(1,1,"0
+While B!=1000
+	getKey->X
+	1+B->B
+	Output(8,13,1000-B
+	If B=900
+	Output(8,15," 
+	If X=21:Then
+		1+A->A
+		Output(1,1,A
+		0->X
+	End
+End
+ClrHome
+If A<200
+Output(1,1,"YOU SUCK
+If A>=200 and A<400
+Output(1,1,"AVERAGE
+If A>=400 and A<500
+Output(1,1,"PRETTY GOOD
+If A>=500 and A<600
+Output(1,1,"SPECTACULAR
+If A>=600
+Output(1,1,"FUCKIN AMAZING
+For(X,1,500
+End
+Output(1,1,"                
+Output(1,1,"YOUR SCORE:
+Output(1,13,A
+Output(3,1,"HIGHEST VERIFIED
+Output(4,1,"SCORE: 685
+Output(5,1,"BY: KLEEMAN AND HOUSE

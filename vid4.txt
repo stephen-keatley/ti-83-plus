@@ -1,0 +1,82 @@
+Menu("WHICH?","10 TO 2",AA,"DECIMAL TO 2",BB,"2 TO 10",CC,"DEC 2 TO 10",DD)
+Lbl AA
+ClrHome
+Input "BASE-10: ",Z
+0->A
+{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}->L1
+While Z>0
+	A+1->A
+	Z/2->Z
+	If fPart(Z)=0
+	Then
+		0->L1(A)
+	Else
+		1->L1(A)
+	End
+	iPart(Z)->Z
+End
+1->C
+16->D
+While D>0
+	Output(3,C,L1(D)
+	C+1->C
+	D-1->D
+End
+Stop
+Lbl BB
+ClrHome
+Input "DECIMAL: ",Z
+{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}->L2
+0->A
+While (fPart(Z)!=0) and (A<24)
+	A+1->A
+	Z*2->Z
+	If iPart(Z)=0
+	Then
+		0->L2(A)
+	Else
+		1->L2(A)
+	End
+	fPart(Z)->Z
+End
+3->B
+1->C
+1->D
+While D<24
+	Output(B,C,L2(D)
+	C+1->C
+	D+1->D
+	If C=17:Then
+		1->C
+		4->B
+	End
+End
+Stop
+Lbl CC
+ClrHome
+Disp "BASE-2"
+Input "",Z
+0->X
+0->A
+While iPart(Z)!=0
+	Z/10->Z
+	((fPart(Z)*10)*2^X)+A->A
+	iPart(Z)->Z
+	X+1->X
+End
+Output(4,1,A
+Stop
+Lbl DD
+ClrHome
+Disp "BASE-2 DECIMAL
+Input "",Z
+0->A
+~1->X
+While fPart(Z)!=0
+	Z*10->Z
+	(iPart(Z)*2^X)+A->A
+	fPart(Z)->Z
+	X-1->X
+End
+Output(4,1,A
+Stop

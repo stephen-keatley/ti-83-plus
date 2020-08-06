@@ -1,0 +1,129 @@
+24->dim(|LB)
+0->Q
+ClrHome
+Menu("PICK ONE","RED",A,"BLUE",B
+Lbl A
+1+|LB(1)->|LB(1
+Goto 0
+Lbl B
+1+|LB(2)->|LB(2
+1+Q->Q
+Lbl 0
+Menu("FAVORITE MOVIE","LION KING",C,"JUNGLE BOOK",D
+Lbl C
+1+Q->Q
+1+|LB(3)->|LB(3
+"LION KING"->Str0
+Goto 1
+Lbl D
+1+|LB(4)->|LB(4
+"JUNGLE BOOK"->Str0
+Lbl 1
+Menu("FAVORITE MOVIE 2","ALADIN",E,Str0,F
+Lbl E
+1+|LB(5)->|LB(5
+Goto 2
+Lbl F
+1+|LB(6)->|LB(6
+1+Q->Q
+Lbl 2
+Menu("BREAKFAST","BAGEL",G,"POP TART",H
+Lbl G
+1+Q->Q
+1+|LB(7)->|LB(7
+Goto 3
+Lbl H
+1+|LB(8)->|LB(8
+Lbl 3
+Menu("TOP OF BUILDING","ROOF",I,"RUFF",J
+Lbl I
+1+|LB(9)->|LB(9
+1+Q->Q
+Goto 4
+Lbl J
+1+|LB(10)->|LB(10
+Lbl 4
+Menu("PICK ONE","HEIST",K,"PET MONKEY",L
+Lbl K
+1+|LB(11)->|LB(11
+Goto 5
+Lbl L
+1+|LB(12)->|LB(12
+1+Q->Q
+Lbl 5
+Menu("BEST SHOW","SIMPSONS",M,"SEINFELD",N
+Lbl M
+1+|LB(13)->|LB(13
+Goto 6
+Lbl N
+1+|LB(14)->|LB(14
+1+Q->Q
+Lbl 6
+Menu("PICK ONE","DEVIL",O,"SATAN",P
+Lbl O
+1+|LB(15)->|LB(15
+1+Q->Q
+Goto 7
+Lbl P
+1+|LB(16)->|LB(16
+Lbl 7
+Menu("PICK ONE","7:45",Q,"QUARTER TO 8",R
+Lbl Q
+1+|LB(17)->|LB(17
+1+Q->Q
+Goto 8
+Lbl R
+1+|LB(18)->|LB(18)
+Lbl 8
+Menu("PICK ONE","MCDONALDS",S,"BURGER KING",T,"WENDYS",W
+Lbl S
+1+|LB(19)->|LB(19
+Goto 9
+Lbl T
+1+|LB(20)->|LB(20
+Goto 9
+Lbl W
+1+|LB(21)->|LB(21
+1+Q->Q
+Lbl 9
+Menu("YOUR SEX","MALE",U,"FEMALE",V,"YES",X
+Lbl U
+1+|LB(22)->|LB(22
+1+Q->Q
+Goto thetatheta
+Lbl V
+1+|LB(23)->|LB(23
+1+Q->Q
+Goto thetatheta
+Lbl X
+1+|LB(24)->|LB(24
+Lbl thetatheta
+ClrDraw
+0->Xmin
+24->Xmax
+0->Ymin
+10->Ymax
+0->B
+Repeat B=24
+	1+B->B
+	Line(B,0,B,|LB(B
+End
+For(X,1,500
+End
+0->P
+Repeat P=3
+	RecallPic 1
+	For(X,1,50
+	End
+	ClrDraw
+	If Q=11:Then
+		Text(30,30,"YOU WIN!
+	Else
+		Text(30,30,"YOU LOSE!
+	End
+	For(X,1,50
+	End
+	P+1->P
+End
+Text(40,30,Q
+Text(40,40,"/11

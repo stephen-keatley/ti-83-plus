@@ -1,0 +1,24 @@
+L1(Z)->A
+Repeat A<=13
+	If A>13
+	A-13->A
+End
+A->L3(Z)
+If A=11
+Text(16,B,"J
+If A=12
+Text(16,B,"Q
+If A=13
+Text(16,B,"K
+If A=1
+Text(16,B,"A
+If A>1 and A<11
+Text(16,B,A
+If L1(Z)<=13
+Text(23,C,"H
+If L1(Z)<=26 and L1(Z)>13
+Text(23,C,"S
+If L1(Z)<=39 and L1(Z)>26
+Text(23,C,"D
+If L1(Z)>39
+Text(23,C,"C

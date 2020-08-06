@@ -1,0 +1,718 @@
+FnOff 
+PlotsOff 
+ClrHome
+Output(4,5,"A LILROO 
+Output(5,4,"PRODUCTION
+3->A
+Repeat A=0
+	A-1->A
+	Output(1,16,A
+	For(X,1,350)
+	End
+End
+ClrHome
+Output(4,4,"CREATED BY
+Output(5,3,"STEVE KLEEMAN
+3->A
+Repeat A=0
+	A-1->A
+	Output(1,16,A
+	For(X,1,350
+	End
+End
+Lbl theta
+ClrHome
+ClrDraw
+AxesOff
+ZStandard
+Text(~1,0,15,"THROUGH THE
+Text(~1,8,24,"UPRIGHTS
+Text(~1,28,0,"2nd-Start
+Text(~1,37,0,"MODE-Instruction
+Text(~1,46,0,"CLEAR-Quit
+While 1
+	getKey->X
+	While X=0
+		getKey->X
+	End
+	If X=45:Then
+		ClrDraw
+		ClrHome
+		Disp 
+		Stop
+	End
+	If X=22:Then
+		ClrDraw
+		Text(0,22,"INSTRUCTIONS
+		Text(8,0,"The objective is to kick the
+		Text(15,0,"ball through the uprights.
+		Text(22,0,"To do this, press 2nd when
+		Text(29,0,"the power meter is full.
+		Text(36,0,"It will then change to an
+		Text(43,0,"accuracy bar and you need
+		Text(50,0,"to press 2nd when it is in the
+		Text(57,0,"middle.              DEL-Back
+	End
+	If X=23:Then
+		Goto theta
+	End
+	If X=21:Then
+		0->B
+		10->D
+		11->E
+		23->F
+		15->G
+		Lbl A
+		ClrDraw
+		If D<45
+		D+5->D
+		If D=45
+		45->D
+		22->A
+		E+1->E
+		F-1->F
+		G+5->G
+		Line(~15,~5.75,15.5,~5.75
+		Line(~15,~8.3,1,~8.3
+		Line(1,~8.3,1,~10
+		Line(~3.5,10,~3.5,7
+		Line(~3.5,7,1.75,7
+		Line(1.75,7,1.75,10
+		Line(~1,7,~1,4.5
+		Line(~6.75,10,~15,~5.75
+		Line(5,10,15.2,~5.75
+		Text(50,5,"POWER METER
+		Text(50,53,"YARDS
+		Text(57,58,G
+		Lbl 0
+		Repeat A=0
+			Pxl-Off(62,A
+			Pxl-Off(61,A
+			Pxl-Off(60,A
+			Pxl-Off(59,A
+			A-1->A
+			getKey->B
+			If B=21
+			Goto 1
+			
+		End
+		Repeat A=45
+			Pxl-On(62,A
+			Pxl-On(61,A
+			Pxl-On(60,A
+			Pxl-On(59,A
+			A+1->A
+			getKey->B
+			If B=21
+			Goto 1
+			
+		End
+		Goto 0
+		Lbl 1
+		0->B
+		45->C
+		Text(50,4,"ACCURACY BAR
+		Repeat C=0
+			Pxl-Off(62,C
+			Pxl-Off(61,C
+			Pxl-Off(60,C
+			Pxl-Off(59,C
+			C-1->C
+			getKey->B
+			If B=21
+			Goto 2
+			
+		End
+		Repeat C=45
+			Pxl-On(62,C
+			Pxl-On(61,C
+			Pxl-On(60,C
+			Pxl-On(59,C
+			C+1->C
+			getKey->B
+			If B=21
+			Goto 2
+			
+		End
+		Goto 1
+		Lbl 2
+		If A>=D and C>=E and C<=F:Then
+			Pxl-On(40,44
+			Pxl-On(41,43
+			Pxl-On(41,44
+			Pxl-On(41,45
+			Pxl-On(42,42
+			Pxl-On(42,43
+			Pxl-On(42,44
+			Pxl-On(42,45
+			Pxl-On(42,46
+			Pxl-On(43,42
+			Pxl-On(43,43
+			Pxl-On(43,44
+			Pxl-On(43,45
+			Pxl-On(43,46
+			Pxl-On(44,42
+			Pxl-On(44,43
+			Pxl-On(44,44
+			Pxl-On(44,45
+			Pxl-On(44,46
+			Pxl-On(45,43
+			Pxl-On(45,44
+			Pxl-On(45,45
+			Pxl-On(46,44
+			For(X,1,300
+			End
+			Pxl-Off(40,44
+			Pxl-Off(41,43
+			Pxl-Off(41,44
+			Pxl-Off(41,45
+			Pxl-Off(42,42
+			Pxl-Off(42,43
+			Pxl-Off(42,44
+			Pxl-Off(42,45
+			Pxl-Off(42,46
+			Pxl-Off(43,42
+			Pxl-Off(43,43
+			Pxl-Off(43,44
+			Pxl-Off(43,45
+			Pxl-Off(43,46
+			Pxl-Off(44,42
+			Pxl-Off(44,43
+			Pxl-Off(44,44
+			Pxl-Off(44,45
+			Pxl-Off(44,46
+			Pxl-Off(45,43
+			Pxl-Off(45,44
+			Pxl-Off(45,45
+			Pxl-Off(46,44
+			Pxl-On(24,44
+			Pxl-On(25,43
+			Pxl-On(25,44
+			Pxl-On(25,45
+			Pxl-On(26,42
+			Pxl-On(26,43
+			Pxl-On(26,44
+			Pxl-On(26,45
+			Pxl-On(26,46
+			Pxl-On(27,42
+			Pxl-On(27,43
+			Pxl-On(27,44
+			Pxl-On(27,45
+			Pxl-On(27,46
+			Pxl-On(28,42
+			Pxl-On(28,43
+			Pxl-On(28,44
+			Pxl-On(28,45
+			Pxl-On(28,46
+			Pxl-On(29,43
+			Pxl-On(29,44
+			Pxl-On(29,45
+			Pxl-On(30,44
+			For(X,1,300
+			End
+			Pxl-Off(24,44
+			Pxl-Off(25,43
+			Pxl-Off(25,44
+			Pxl-Off(25,45
+			Pxl-Off(26,42
+			Pxl-Off(26,43
+			Pxl-Off(26,44
+			Pxl-Off(26,45
+			Pxl-Off(26,46
+			Pxl-Off(27,42
+			Pxl-Off(27,43
+			Pxl-Off(27,44
+			Pxl-Off(27,45
+			Pxl-Off(27,46
+			Pxl-Off(28,42
+			Pxl-Off(28,43
+			Pxl-Off(28,44
+			Pxl-Off(28,45
+			Pxl-Off(28,46
+			Pxl-Off(29,43
+			Pxl-Off(29,44
+			Pxl-Off(29,45
+			Pxl-Off(30,44
+			Pxl-On(1,44
+			Pxl-On(2,43
+			Pxl-On(2,44
+			Pxl-On(2,45
+			Pxl-On(3,42
+			Pxl-On(3,43
+			Pxl-On(3,44
+			Pxl-On(3,45
+			Pxl-On(3,46
+			Pxl-On(4,42
+			Pxl-On(4,43
+			Pxl-On(4,44
+			Pxl-On(4,45
+			Pxl-On(4,46
+			Pxl-On(5,42
+			Pxl-On(5,43
+			Pxl-On(5,44
+			Pxl-On(5,45
+			Pxl-On(5,46
+			Pxl-On(6,43
+			Pxl-On(6,44
+			Pxl-On(6,45
+			Pxl-On(7,44
+			For(X,1,300
+			End
+			Pxl-Off(1,44
+			Pxl-Off(2,43
+			Pxl-Off(2,44
+			Pxl-Off(2,45
+			Pxl-Off(3,42
+			Pxl-Off(3,43
+			Pxl-Off(3,44
+			Pxl-Off(3,45
+			Pxl-Off(3,46
+			Pxl-Off(4,42
+			Pxl-Off(4,43
+			Pxl-Off(4,44
+			Pxl-Off(4,45
+			Pxl-Off(4,46
+			Pxl-Off(5,42
+			Pxl-Off(5,43
+			Pxl-Off(5,44
+			Pxl-Off(5,45
+			Pxl-Off(5,46
+			Pxl-Off(6,43
+			Pxl-Off(6,44
+			Pxl-Off(6,45
+			Pxl-Off(7,44
+			Text(~1,25,20,"ITS GOOD!
+			For(X,1,300
+			End
+			Goto A
+		End
+		If A>=D and C<E:Then
+			Pxl-On(40,44
+			Pxl-On(41,43
+			Pxl-On(41,44
+			Pxl-On(41,45
+			Pxl-On(42,42
+			Pxl-On(42,43
+			Pxl-On(42,44
+			Pxl-On(42,45
+			Pxl-On(42,46
+			Pxl-On(43,42
+			Pxl-On(43,43
+			Pxl-On(43,44
+			Pxl-On(43,45
+			Pxl-On(43,46
+			Pxl-On(44,42
+			Pxl-On(44,43
+			Pxl-On(44,44
+			Pxl-On(44,45
+			Pxl-On(44,46
+			Pxl-On(45,43
+			Pxl-On(45,44
+			Pxl-On(45,45
+			Pxl-On(46,44
+			For(X,1,300
+			End
+			Pxl-Off(40,44
+			Pxl-Off(41,43
+			Pxl-Off(41,44
+			Pxl-Off(41,45
+			Pxl-Off(42,42
+			Pxl-Off(42,43
+			Pxl-Off(42,44
+			Pxl-Off(42,45
+			Pxl-Off(42,46
+			Pxl-Off(43,42
+			Pxl-Off(43,43
+			Pxl-Off(43,44
+			Pxl-Off(43,45
+			Pxl-Off(43,46
+			Pxl-Off(44,42
+			Pxl-Off(44,43
+			Pxl-Off(44,44
+			Pxl-Off(44,45
+			Pxl-Off(44,46
+			Pxl-Off(45,43
+			Pxl-Off(45,44
+			Pxl-Off(45,45
+			Pxl-Off(46,44
+			Pxl-On(24,33
+			Pxl-On(25,32
+			Pxl-On(25,33
+			Pxl-On(25,34
+			Pxl-On(26,31
+			Pxl-On(26,32
+			Pxl-On(26,33
+			Pxl-On(26,34
+			Pxl-On(26,35
+			Pxl-On(27,31
+			Pxl-On(27,32
+			Pxl-On(27,33
+			Pxl-On(27,34
+			Pxl-On(27,35
+			Pxl-On(28,31
+			Pxl-On(28,32
+			Pxl-On(28,33
+			Pxl-On(28,34
+			Pxl-On(28,35
+			Pxl-On(29,32
+			Pxl-On(29,33
+			Pxl-On(29,34
+			Pxl-On(30,33
+			For(X,1,300
+			End
+			Pxl-Off(24,33
+			Pxl-Off(25,32
+			Pxl-Off(25,33
+			Pxl-Off(25,34
+			Pxl-Off(26,31
+			Pxl-Off(26,32
+			Pxl-Off(26,33
+			Pxl-Off(26,34
+			Pxl-Off(26,35
+			Pxl-Off(27,31
+			Pxl-Off(27,32
+			Pxl-Off(27,33
+			Pxl-Off(27,34
+			Pxl-Off(27,35
+			Pxl-Off(28,31
+			Pxl-Off(28,32
+			Pxl-Off(28,33
+			Pxl-Off(28,34
+			Pxl-Off(28,35
+			Pxl-Off(29,32
+			Pxl-Off(29,33
+			Pxl-Off(29,34
+			Pxl-Off(30,33
+			Pxl-On(1,24
+			Pxl-On(2,23
+			Pxl-On(2,24
+			Pxl-On(2,25
+			Pxl-On(3,22
+			Pxl-On(3,23
+			Pxl-On(3,24
+			Pxl-On(3,25
+			Pxl-On(3,26
+			Pxl-On(4,22
+			Pxl-On(4,23
+			Pxl-On(4,24
+			Pxl-On(4,25
+			Pxl-On(4,26
+			Pxl-On(5,22
+			Pxl-On(5,23
+			Pxl-On(5,24
+			Pxl-On(5,25
+			Pxl-On(5,26
+			Pxl-On(6,23
+			Pxl-On(6,24
+			Pxl-On(6,25
+			Pxl-On(7,24
+			For(X,1,300
+			End
+			Pxl-Off(1,24
+			Pxl-Off(2,23
+			Pxl-Off(2,24
+			Pxl-Off(2,25
+			Pxl-Off(3,22
+			Pxl-Off(3,23
+			Pxl-Off(3,24
+			Pxl-Off(3,25
+			Pxl-Off(3,26
+			Pxl-Off(4,22
+			Pxl-Off(4,23
+			Pxl-Off(4,24
+			Pxl-Off(4,25
+			Pxl-Off(4,26
+			Pxl-Off(5,22
+			Pxl-Off(5,23
+			Pxl-Off(5,24
+			Pxl-Off(5,25
+			Pxl-Off(5,26
+			Pxl-Off(6,23
+			Pxl-Off(6,24
+			Pxl-Off(6,25
+			Pxl-Off(7,24
+			Text(~1,25,16,"WIDE LEFT!
+			Text(~1,33,20,"GAME OVER
+			For(X,1,500
+			End
+			Goto theta
+		End
+		If A>=D and C>F:Then
+			Pxl-On(40,44
+			Pxl-On(41,43
+			Pxl-On(41,44
+			Pxl-On(41,45
+			Pxl-On(42,42
+			Pxl-On(42,43
+			Pxl-On(42,44
+			Pxl-On(42,45
+			Pxl-On(42,46
+			Pxl-On(43,42
+			Pxl-On(43,43
+			Pxl-On(43,44
+			Pxl-On(43,45
+			Pxl-On(43,46
+			Pxl-On(44,42
+			Pxl-On(44,43
+			Pxl-On(44,44
+			Pxl-On(44,45
+			Pxl-On(44,46
+			Pxl-On(45,43
+			Pxl-On(45,44
+			Pxl-On(45,45
+			Pxl-On(46,44
+			For(X,1,300
+			End
+			Pxl-Off(40,44
+			Pxl-Off(41,43
+			Pxl-Off(41,44
+			Pxl-Off(41,45
+			Pxl-Off(42,42
+			Pxl-Off(42,43
+			Pxl-Off(42,44
+			Pxl-Off(42,45
+			Pxl-Off(42,46
+			Pxl-Off(43,42
+			Pxl-Off(43,43
+			Pxl-Off(43,44
+			Pxl-Off(43,45
+			Pxl-Off(43,46
+			Pxl-Off(44,42
+			Pxl-Off(44,43
+			Pxl-Off(44,44
+			Pxl-Off(44,45
+			Pxl-Off(44,46
+			Pxl-Off(45,43
+			Pxl-Off(45,44
+			Pxl-Off(45,45
+			Pxl-Off(46,44
+			Pxl-On(24,54
+			Pxl-On(25,53
+			Pxl-On(25,54
+			Pxl-On(25,55
+			Pxl-On(26,52
+			Pxl-On(26,53
+			Pxl-On(26,54
+			Pxl-On(26,55
+			Pxl-On(26,56
+			Pxl-On(27,52
+			Pxl-On(27,53
+			Pxl-On(27,54
+			Pxl-On(27,55
+			Pxl-On(27,56
+			Pxl-On(28,52
+			Pxl-On(28,53
+			Pxl-On(28,54
+			Pxl-On(28,55
+			Pxl-On(28,56
+			Pxl-On(29,53
+			Pxl-On(29,54
+			Pxl-On(29,55
+			Pxl-On(30,54
+			For(X,1,300
+			End
+			Pxl-Off(24,54
+			Pxl-Off(25,53
+			Pxl-Off(25,54
+			Pxl-Off(25,55
+			Pxl-Off(26,52
+			Pxl-Off(26,53
+			Pxl-Off(26,54
+			Pxl-Off(26,55
+			Pxl-Off(26,56
+			Pxl-Off(27,52
+			Pxl-Off(27,53
+			Pxl-Off(27,54
+			Pxl-Off(27,55
+			Pxl-Off(27,56
+			Pxl-Off(28,52
+			Pxl-Off(28,53
+			Pxl-Off(28,54
+			Pxl-Off(28,55
+			Pxl-Off(28,56
+			Pxl-Off(29,53
+			Pxl-Off(29,54
+			Pxl-Off(29,55
+			Pxl-Off(30,54
+			Pxl-On(1,64
+			Pxl-On(2,63
+			Pxl-On(2,64
+			Pxl-On(2,65
+			Pxl-On(3,62
+			Pxl-On(3,63
+			Pxl-On(3,64
+			Pxl-On(3,65
+			Pxl-On(3,66
+			Pxl-On(4,62
+			Pxl-On(4,63
+			Pxl-On(4,64
+			Pxl-On(4,65
+			Pxl-On(4,66
+			Pxl-On(5,62
+			Pxl-On(5,63
+			Pxl-On(5,64
+			Pxl-On(5,65
+			Pxl-On(5,66
+			Pxl-On(6,63
+			Pxl-On(6,64
+			Pxl-On(6,65
+			Pxl-On(7,64
+			For(X,1,300
+			End
+			Pxl-Off(1,64
+			Pxl-Off(2,63
+			Pxl-Off(2,64
+			Pxl-Off(2,65
+			Pxl-Off(3,62
+			Pxl-Off(3,63
+			Pxl-Off(3,64
+			Pxl-Off(3,65
+			Pxl-Off(3,66
+			Pxl-Off(4,62
+			Pxl-Off(4,63
+			Pxl-Off(4,64
+			Pxl-Off(4,65
+			Pxl-Off(4,66
+			Pxl-Off(5,62
+			Pxl-Off(5,63
+			Pxl-Off(5,64
+			Pxl-Off(5,65
+			Pxl-Off(5,66
+			Pxl-Off(6,63
+			Pxl-Off(6,64
+			Pxl-Off(6,65
+			Pxl-Off(7,64
+			Text(~1,25,15,"WIDE RIGHT!
+			Text(~1,33,20,"GAME OVER
+			For(X,1,500
+			End
+			Goto theta
+		End
+		If A<D:Then
+			Pxl-On(40,44
+			Pxl-On(41,43
+			Pxl-On(41,44
+			Pxl-On(41,45
+			Pxl-On(42,42
+			Pxl-On(42,43
+			Pxl-On(42,44
+			Pxl-On(42,45
+			Pxl-On(42,46
+			Pxl-On(43,42
+			Pxl-On(43,43
+			Pxl-On(43,44
+			Pxl-On(43,45
+			Pxl-On(43,46
+			Pxl-On(44,42
+			Pxl-On(44,43
+			Pxl-On(44,44
+			Pxl-On(44,45
+			Pxl-On(44,46
+			Pxl-On(45,43
+			Pxl-On(45,44
+			Pxl-On(45,45
+			Pxl-On(46,44
+			For(X,1,300
+			End
+			Pxl-Off(40,44
+			Pxl-Off(41,43
+			Pxl-Off(41,44
+			Pxl-Off(41,45
+			Pxl-Off(42,42
+			Pxl-Off(42,43
+			Pxl-Off(42,44
+			Pxl-Off(42,45
+			Pxl-Off(42,46
+			Pxl-Off(43,42
+			Pxl-Off(43,43
+			Pxl-Off(43,44
+			Pxl-Off(43,45
+			Pxl-Off(43,46
+			Pxl-Off(44,42
+			Pxl-Off(44,43
+			Pxl-Off(44,44
+			Pxl-Off(44,45
+			Pxl-Off(44,46
+			Pxl-Off(45,43
+			Pxl-Off(45,44
+			Pxl-Off(45,45
+			Pxl-Off(46,44
+			Pxl-On(24,44
+			Pxl-On(25,43
+			Pxl-On(25,44
+			Pxl-On(25,45
+			Pxl-On(26,42
+			Pxl-On(26,43
+			Pxl-On(26,44
+			Pxl-On(26,45
+			Pxl-On(26,46
+			Pxl-On(27,42
+			Pxl-On(27,43
+			Pxl-On(27,44
+			Pxl-On(27,45
+			Pxl-On(27,46
+			Pxl-On(28,42
+			Pxl-On(28,43
+			Pxl-On(28,44
+			Pxl-On(28,45
+			Pxl-On(28,46
+			Pxl-On(29,43
+			Pxl-On(29,44
+			Pxl-On(29,45
+			Pxl-On(30,44
+			For(X,1,300
+			End
+			Pxl-Off(24,44
+			Pxl-Off(25,43
+			Pxl-Off(25,44
+			Pxl-Off(25,45
+			Pxl-Off(26,42
+			Pxl-Off(26,43
+			Pxl-Off(26,44
+			Pxl-Off(26,45
+			Pxl-Off(26,46
+			Pxl-Off(27,42
+			Pxl-Off(27,43
+			Pxl-Off(27,44
+			Pxl-Off(27,45
+			Pxl-Off(27,46
+			Pxl-Off(28,42
+			Pxl-Off(28,43
+			Pxl-Off(28,44
+			Pxl-Off(28,45
+			Pxl-Off(28,46
+			Pxl-Off(29,43
+			Pxl-Off(29,44
+			Pxl-Off(29,45
+			Pxl-Off(30,44
+			Pxl-On(44,41
+			Pxl-On(43,42
+			Pxl-On(44,42
+			Pxl-On(45,42
+			Pxl-On(42,43
+			Pxl-On(43,43
+			Pxl-On(44,43
+			Pxl-On(45,43
+			Pxl-On(46,43
+			Pxl-On(42,44
+			Pxl-On(43,44
+			Pxl-On(44,44
+			Pxl-On(45,44
+			Pxl-On(46,44
+			Pxl-On(42,45
+			Pxl-On(43,45
+			Pxl-On(44,45
+			Pxl-On(45,45
+			Pxl-On(46,45
+			Pxl-On(43,46
+			Pxl-On(44,46
+			Pxl-On(45,46
+			Pxl-On(44,47
+			Text(~1,25,16,"TOO SHORT!
+			Text(~1,33,20,"GAME OVER
+			For(X,1,1000
+			End
+			Goto theta
+		End
+	End
+End

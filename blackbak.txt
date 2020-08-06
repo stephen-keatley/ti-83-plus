@@ -1,0 +1,855 @@
+"//INTRO
+
+ClrHome
+Output(4,5,"A LILROO 
+Output(5,4,"PRODUCTION
+3->A
+Repeat A=0
+	A-1->A
+	Output(1,16,A
+	For(X,1,350)
+	End
+End
+ClrHome
+Output(4,4,"CREATED BY
+Output(5,3,"STEVE KLEEMAN
+3->A
+Repeat A=0
+	A-1->A
+	Output(1,16,A
+	For(X,1,350
+	End
+End
+
+"//SETUP
+
+ClrHome
+FnOff 
+ZStandard
+AxesOff
+CoordOff
+ClrDraw
+10->ZTmin
+5000->Zthetamin
+5->dim(|LF)
+Lbl 0
+DelVar |LF
+5->dim(|LF)
+If Zthetamin<10
+Goto PP
+DelVar A:DelVar B:DelVar C:DelVar D:DelVar E:DelVar F:DelVar G:DelVar H:DelVar I:DelVar J:DelVar K:DelVar L:DelVar M:DelVar N:DelVar O:DelVar P:DelVar Q:DelVar R:DelVar S:DelVar T:DelVar U:DelVar V:DelVar W:DelVar X:DelVar Y:DelVar Z:DelVar theta
+"//MONEY
+
+If ZTmin>2000
+(ZTmin/2)->ZTmin
+Zthetamin-ZTmin->Zthetamin
+ClrDraw
+Text(2,20,"SELECT YOUR BET
+If Zthetamin<0:Then
+	Repeat Zthetamin>=10
+		ZTmin-10->ZTmin
+		Zthetamin+10->Zthetamin
+	End
+End
+Text(35,12,"ARROW KEYS CHANGE BET
+Text(25,2,"BET=
+Text(25,19,ZTmin
+Text(46,70,Zthetamin
+Lbl UU
+0->G
+While 1
+	getKey->G
+	While G=0
+		getKey->G
+	End
+	If G=26 and ZTmin>1500 and ZTmin<2000 and Zthetamin>=500:Then
+		2000-ZTmin->ZTmin
+		Zthetamin-ZTmin->Zthetamin
+		Text(46,70,"                     
+		Text(46,70,Zthetamin
+		2000->ZTmin
+		Text(25,19,"                     
+		Text(25,19,ZTmin
+	End
+	If G=24 and ZTmin<500 and ZTmin>0 and Zthetamin>0:Then
+		Zthetamin+ZTmin->Zthetamin
+		0->ZTmin
+		Text(25,19,"                     
+		Text(25,19,ZTmin
+		Text(46,70,"                     
+		Text(46,70,Zthetamin
+	End
+	If G=25 and ZTmin<2000 and Zthetamin>0:Then
+		ZTmin+10->ZTmin
+		Text(25,19,"                     
+		Text(25,19,ZTmin
+		Zthetamin-10->Zthetamin
+		Text(46,70,"                     
+		Text(46,70,Zthetamin
+	End
+	If G=34 and ZTmin>0 and Zthetamin>=0:Then
+		ZTmin-10->ZTmin
+		Text(25,19,"                     
+		Text(25,19,ZTmin
+		10+Zthetamin->Zthetamin
+		Text(46,70,"                     
+		Text(46,70,Zthetamin
+	End
+	If G=24 and ZTmin>=500 and Zthetamin>=0:Then
+		ZTmin-500->ZTmin
+		Text(25,19,"                     
+		Text(25,19,ZTmin
+		500+Zthetamin->Zthetamin
+		Text(46,70,"                     
+		Text(46,70,Zthetamin
+	End
+	If G=26 and ZTmin<=1500 and Zthetamin>=500:Then
+		500+ZTmin->ZTmin
+		Text(25,19,"                     
+		Text(25,19,ZTmin
+		Zthetamin-500->Zthetamin
+		Text(46,70,"                     
+		Text(46,70,Zthetamin
+	End
+	If G=45
+	Goto XY
+	If G=105
+	Goto TT
+End
+
+
+Lbl TT
+3->U
+ClrDraw
+Text(46,46,"TOTAL=
+Text(46,70,Zthetamin
+Text(25,2,"BET=
+Text(25,19,ZTmin
+Horizontal ~7
+Line(~7,~7,~7,~10
+Line(~2.5,~7,~2.5,~10
+Line(2,~7,2,~10
+Line(6.9,~7,6.9,~10
+Text(56,0,"HIT
+Text(56,17,"STAY
+Text(56,41,"DBL
+randInt(2,11)->A
+If A!=10
+randInt(1,4)->B
+Lbl 1
+If |LF(1)!=14:Then
+	randInt(2,11)->C
+	If C!=10:Then
+		randInt(1,4)->D
+		If A=C and B=D
+		Goto 1
+	End
+	Lbl 2
+	randInt(2,11)->E
+	If E!=10:Then
+		randInt(1,4)->F
+		If (A=E and B=F) or (C=E and D=F)
+		Goto 2
+	End
+	Lbl 3
+	randInt(2,11)->J
+	If J!=10:Then
+		randInt(1,4)->K
+		If (J=A and K=B) or (J=C and K=D) or (J=E and K=F)
+		Goto 3
+	End
+End
+
+
+Line(~9.3,~1,~9.3,~4
+Line(~9.3,~1,~7.3,~1
+Line(~7.3,~1,~7.3,~4
+Line(~9.3,~4,~7.3,~4
+Text(35,5,A
+Line(~6.8,~1,~6.8,~4
+Line(~6.8,~1,~4.6,~1
+Line(~4.6,~1,~4.6,~4
+Line(~6.8,~4,~4.6,~4
+Text(35,17,C
+
+Line(~9.3,3,~7.3,3
+Line(~9.3,3,~9.3,6
+Line(~9.3,6,~7.3,6
+Line(~7.3,3,~7.3,6
+
+Line(~6.8,3,~4.6,3
+Line(~6.8,3,~6.8,6
+Line(~6.8,6,~4.6,6
+Line(~4.6,6,~4.6,3
+Text(14,17,E
+
+
+If A=11 and C=11
+1->C
+A+C->Z
+Text(46,25,Z
+E->theta
+Text(2,25,theta
+If Z=21 and E+J=21:Then
+	Text(25,40,"PUSH
+	ZTmin+Zthetamin->Zthetamin
+	For(X,1,500
+	End
+	Goto 0
+End
+If Z=21:Then
+	Text(25,40,"PLAYER
+	Text(31,40,"BLACKJACK
+	(ZTmin*1.5)+ZTmin+Zthetamin->Zthetamin
+	For(X,1,500
+	End
+	If |LF(1)=14 and |LF(2)=1:Then
+		2->|LF(2)
+		Goto TT
+	End
+	Goto 0
+End
+If E=10 and J=11:Then
+	Text(14,5,J
+	Text(25,40,"DEALER
+	Text(31,40,"BLACKJACK
+	For(X,1,500
+	End
+	Goto 0
+End
+If A=C and |LF(1)!=14
+Text(56,58,"SPLIT
+If E=11 and |LF(1)!=14
+Text(56,82,"INS
+
+"// STAY 
+If G=12:Then
+	Lbl 5
+	If |LF(1)=14 and |LF(2)=2
+	Z->|LF(4)
+	If |LF(1)=14 and |LF(2)=1:Then
+		Z->|LF(3)
+		1+|LF(2)->|LF(2)
+		0->G
+		Goto TT
+	End
+	Text(14,5,J
+	If J=11 and E=11:Then
+		1->J
+		Text(2,25,"     
+	End
+	theta+J->theta
+	Text(2,25,theta
+	If theta>16
+	Goto AC
+	Lbl AB
+	randInt(2,11)->L
+	If L!=10:Then
+		randInt(1,4)->M
+		If (L=A and M=B) or (L=C and M=D) or (L=E and M=F) or (L=H and M=I) or (L=J and M=K)
+		Goto AB
+	End
+	Line(~4.2,3,~4.2,6
+	Line(~4.2,3,~2.2,3
+	Line(~2.2,3,~2.2,6
+	Line(~4.2,6,~2.2,6
+	Text(14,29,L
+	L+theta->theta
+	If theta>21 and (J=11 or E=11 or L=11):Then
+		If J=11:Then
+			1->J
+			Goto BZ
+		End
+		If E=11:Then
+			1->E
+			Goto BZ
+		End
+		If L=11:Then
+			1->L
+			Goto BZ
+		End
+		Lbl BZ
+		theta-10->theta
+		Text(2,25,"         
+	End
+	Text(2,25,theta
+	If theta>21:Then
+		Text(25,40,"DEALER BUSTS
+		Zthetamin+(2*ZTmin)->Zthetamin
+		If |LF(3)<=21 and |LF(4)<=21
+		Zthetamin+(2*ZTmin)->Zthetamin
+		For(X,1,500
+		End
+		Goto 0
+	End
+	If theta>16
+	Goto AC
+	If theta<17:Then
+		Lbl AA
+		randInt(2,11)->N
+		If N!=10:Then
+			randInt(1,4)->O
+			If (N=A and O=B) or (N=C and O=D) or (N=E and O=F) or (N=H and O=I) or (N=J and O=K) or (N=L and O=M)
+			Goto AA
+		End
+		Line(~1.8,3,~1.8,6
+		Line(~1.8,3,.4,3
+		Line(.4,3,.4,6
+		Line(~1.8,6,.4,6
+		Text(14,41,N
+		N+theta->theta
+		If theta>21 and (J=11 or E=11 or L=11 or N=11):Then
+			If J=11:Then
+				1->J
+				Goto CZ
+			End
+			If E=11:Then
+				1->E
+				Goto CZ
+			End
+			If L=11:Then
+				1->L
+				Goto CZ
+			End
+			If N=11:Then
+				1->N
+				Goto CZ
+			End
+			Lbl CZ
+			theta-10->theta
+			Text(2,25,"          
+		End
+		Text(2,25,theta
+	End
+	If theta>21:Then
+		Text(25,40,"DEALER BUSTS
+		Zthetamin+(2*ZTmin)->Zthetamin
+		If |LF(3)<=21 and |LF(4)<=21
+		Zthetamin+(2*ZTmin)->Zthetamin
+		For(X,1,500
+		End
+		Goto 0
+	End
+	If theta>16
+	Goto AC
+	If theta<17:Then
+		Lbl AD
+		randInt(2,11)->P
+		If P!=10:Then
+			randInt(1,4)->Q
+			If (P=A and Q=B) or (P=C and Q=D) or (P=E and Q=F) or (P=H and Q=I) or (P=J and Q=K) or (P=L and Q=M) or (P=N and Q=O)
+			Goto AD
+		End
+		Line(.9,3,.9,6
+		Line(.9,3,2.9,3
+		Line(2.9,3,2.9,6
+		Line(.9,6,2.9,6
+		Text(14,53,P
+		P+theta->theta
+		If theta>21 and (J=11 or E=11 or N=11 or L=11 or P=11):Then
+			If J=11:Then
+				1->J
+				Goto DZ
+			End
+			If E=11:Then
+				1->E
+				Goto DZ
+			End
+			If L=11:Then
+				1->L
+				Goto DZ
+			End
+			If N=11:Then
+				1->N
+				Goto DZ
+			End
+			If P=1:Then
+				1->P
+				Goto DZ
+			End
+			Lbl DZ
+			theta-10->theta
+			Text(2,25,"         
+		End
+		Text(2,25,theta
+	End
+	If theta>21:Then
+		Text(25,40,"DEALER BUSTS
+		Zthetamin+(2*ZTmin)->Zthetamin
+		If |LF(3)<=21 and |LF(4)<=21
+		Zthetamin+(2*ZTmin)->Zthetamin
+		For(X,1,500
+		End
+		Goto 0
+	End
+	If theta>16
+	Goto AC
+	If theta<17:Then
+		Lbl AM
+		randInt(2,11)->V
+		If V!=10:Then
+			randInt(1,4)->W
+			If (V=A and W=B) or (V=C and W=D) or (V=E and W=F) or (V=J and W=K) or (V=H and W=I) or (V=L and W=M) or (V=N and W=O) or (V=P and W=Q) or (V=R and W=S) or (V=T and W=U)
+			Goto AM
+		End
+		Line(3.4,3,3.4,6
+		Line(3.4,3,5.6,3
+		Line(5.6,3,5.6,6
+		Line(3.4,6,5.6,6
+		Text(14,65,V
+		V+theta->theta
+		If theta>21 and (J=11 or E=11 or L=11 or N=11 or P=11 or V=11):Then
+			If J=11:Then
+				1->J
+				Goto AE
+			End
+			If E=11:Then
+				1->E
+				Goto AE
+			End
+			If L=11:Then
+				1->L
+				Goto AE
+			End
+			If N=11:Then
+				1->N
+				Goto AE
+			End
+			If P=11:Then
+				1->P
+				Goto AE
+			End
+			If V=11:Then
+				1->V
+				Goto AE
+			End
+			Lbl AE
+			theta-10->theta
+			Text(46,25,"          
+		End
+		Text(46,25,theta
+	End
+	If theta>21:Then
+		Text(25,40,"DEALER BUSTS
+		Zthetamin+(2*ZTmin)->Zthetamin
+		If |LF(3)<=21 and |LF(4)<=21
+		Zthetamin+(2*ZTmin)->Zthetamin
+		For(X,1,500
+		End
+		Goto 0
+	End
+	
+	
+	If theta<=16:Then
+		Output(4,5,"ERROR!
+		Output(6,6,"SORRY
+		Zthetamin+ZTmin->Zthetamin
+		For(X,1,500
+		End
+		Goto 0
+	End
+	
+	
+	
+	Lbl AC
+	If theta>16 and theta<22:Then
+		Z->|LF(U)
+		If Z>theta or |LF(U)>theta:Then
+			U+1->U
+			Text(25,40,"PLAYER WINS
+			Zthetamin+(2*ZTmin)->Zthetamin
+			For(X,1,500
+			End
+			If |LF(1)=14 and U=4:Then
+				Text(25,40,"                                         
+				Goto AC
+			End
+			Goto 0
+		End
+		If theta>Z or theta>|LF(U):Then
+			U+1->U
+			Text(25,40,"DEALER WINS
+			For(X,1,500
+			End
+			If |LF(1)=14 and U=4:Then
+				Text(25,40,"                                         
+				Goto AC
+			End
+			Goto 0
+		End
+		If Z=theta or |LF(U)=theta:Then
+			1+U->U
+			Text(25,40,"PUSH
+			Zthetamin+ZTmin->Zthetamin
+			For(X,1,500
+			End
+			If |LF(1)=14 and U=4:Then
+				Text(25,40,"                         
+				Goto AC
+			End
+			Goto 0
+		End
+	End
+End
+
+
+
+Lbl CA
+While 1
+	getKey->G
+	While G=0
+		getKey->G
+	End
+	If G=11
+	Goto 4
+	If G=12
+	Goto 5
+	If G=13 and Zthetamin>=ZTmin:Then
+		Zthetamin-ZTmin->Zthetamin
+		ZTmin*2->ZTmin
+		Text(25,19,ZTmin
+		Text(46,70,"                  
+		Text(46,70,Zthetamin
+		ZTmin/2->ZTmin
+		Goto 4
+	End
+	If G=14 and A=C and Zthetamin>=ZTmin:Then
+		1->|LF(2)
+		Zthetamin-ZTmin->Zthetamin
+		ZTmin*2->ZTmin
+		Text(25,19,ZTmin
+		Text(46,70,"                  
+		Text(46,70,Zthetamin
+		Text(56,41,"             
+		ZTmin/2->ZTmin
+		14->|LF(1)
+		Goto TT
+	End
+	If E=11 and G=15 and X=0 and Zthetamin>=(ZTmin/2)
+	Goto 8
+	If G=45
+	Goto XY
+End
+
+Lbl 8
+If J+E=21:Then
+	Text(14,5,J
+	Zthetamin+(ZTmin/2)->Zthetamin
+	Text(46,70,"                  
+	Text(46,70,Zthetamin
+	For(X,1,500
+	End
+	Goto 0
+End
+If J+E!=21:Then
+	Zthetamin-(ZTmin/2)->Zthetamin
+	Text(46,70,"                   
+	Text(46,70,Zthetamin
+	Text(56,82,"           
+	1->X
+	Goto CA
+End
+
+
+Lbl 4
+Text(56,41,"           
+randInt(2,11)->H
+If H!=10:Then
+	randInt(1,4)->I
+	If (H=A and I=B) or (H=C and I=D) or (H=E and I=F) or (H=J and I=K)
+	Goto 4
+End
+Line(~4.2,~1,~4.2,~4
+Line(~4.2,~1,~2.2,~1
+Line(~2.2,~1,~2.2,~4
+Line(~4.2,~4,~2.2,~4
+Text(35,29,H
+Z+H->Z
+If Z>21 and (A=11 or C=11 or H=11):Then
+	If A=11:Then
+		1->A
+		Goto EZ
+	End
+	If C=11:Then
+		1->C
+		Goto EZ
+	End
+	If H=11:Then
+		1->H
+		Goto EZ
+	End
+	Lbl EZ
+	Z-10->Z
+	Text(46,25,"        
+End
+Text(46,25,Z
+If Z>21:Then
+	Text(25,40,"PLAYER BUSTS
+	For(X,1,500
+	End
+	If |LF(1)=14:Then
+		If U=3 or U=4
+		U+1->U
+		If U=4
+		Goto TT
+	End
+	Goto 0
+End
+If G=13
+Goto 5
+
+
+Text(56,58,"                   
+Text(56,82,"           
+0->G
+While 1
+	getKey->G
+	While G=0
+		getKey->G
+	End
+	If G=11
+	Goto BB
+	If G=12
+	Goto 5
+	If G=45
+	Goto XY
+End
+
+
+Lbl BB
+randInt(2,11)->R
+If R!=10:Then
+	randInt(1,4)->S
+	If (R=A and S=B) or (R=C and S=D) or (R=E and S=F) or (R=J and S=K) or (R=H and S=I)
+	Goto BB
+End
+Line(~1.8,~1,~1.8,~4
+Line(~1.8,~1,.4,~1
+Line(.4,~1,.4,~4
+Line(~1.8,~4,.4,~4
+Text(35,41,R
+R+Z->Z
+If Z>21 and (A=11 or C=11 or H=11 or R=11):Then
+	If A=11:Then
+		1->A
+		Goto FZ
+	End
+	If C=11:Then
+		1->C
+		Goto FZ
+	End
+	If H=11:Then
+		1->H
+		Goto FZ
+	End
+	If R=11:Then
+		1->R
+		Goto FZ
+	End
+	Lbl FZ
+	Z-10->Z
+	Text(46,25,"          
+End
+Text(46,25,Z
+If Z>21:Then
+	Text(25,40,"PLAYER BUSTS
+	For(X,1,500
+	End
+	If |LF(1)=14:Then
+		If U=3 or U=4
+		U+1->U
+		If U=4
+		Goto TT
+	End
+	Goto 0
+End
+If G=13
+Goto 5
+0->G
+
+
+
+While 1
+	getKey->G
+	While G=0
+		getKey->G
+	End
+	If G=11
+	Goto CC
+	If G=12
+	Goto 5
+	If G=45
+	Goto XY
+End
+
+
+Lbl CC
+randInt(2,11)->T
+If T!=10:Then
+	randInt(1,4)->U
+	If (T=A and U=B) or (T=C and U=D) or (T=E and U=F) or (T=H and U=I) or (T=J and U=K) or (T=R and U=S)
+	Goto CC
+End
+Line(.9,~1,.9,~4
+Line(.9,~1,2.9,~1
+Line(2.9,~1,2.9,~4
+Line(.9,~4,2.9,~4
+Text(35,53,T
+T+Z->Z
+If Z>21 and (A=11 or C=11 or H=11 or R=11 or T=11):Then
+	If A=11:Then
+		1->A
+		Goto GZ
+	End
+	If C:Then
+		1->C
+		Goto GZ
+	End
+	If H:Then
+		1->H
+		Goto GZ
+	End
+	If R:Then
+		1->R
+		Goto GZ
+	End
+	If T:Then
+		1->T
+		Goto GZ
+	End
+	Lbl GZ
+	Z-10->Z
+	Text(46,25,"          
+End
+Text(46,25,Z
+If Z>21:Then
+	Text(25,40,"PLAYER BUSTS
+	For(X,1,500
+	End
+	If |LF(1)=14:Then
+		If U=3 or U=4
+		U+1->U
+		If U=4
+		Goto TT
+	End
+	Goto 0
+End
+If G=13
+Goto 5
+0->G
+
+
+While 1
+	getKey->G
+	While G=0
+		getKey->G
+	End
+	If G=11
+	Goto DD
+	If G=12
+	Goto 5
+	If G=45
+	Goto XY
+End
+
+
+Lbl DD
+randInt(2,11)->Y
+If Y!=10:Then
+	randInt(1,4)->X
+	If (Y=A and X=B) or (Y=C and X=D) or (Y=E and X=F) or (Y=H and X=I) or (Y=J and X=K) or (Y=R and X=S) or (Y=T and X=U)
+	Goto DD
+End
+Line(3.4,~1,3.4,~4
+Line(3.4,~1,5.6,~1
+Line(5.6,~1,5.6,~4
+Line(3.4,~4,5.6,~4
+Text(35,65,Y
+Y+Z->Z
+If Z>21 and (A=11 or C=11 or H=11 or R=11 or T=11 or Y=11):Then
+	If A=11:Then
+		1->A
+		Goto EE
+	End
+	If C=11:Then
+		1->C
+		Goto EE
+	End
+	If H:Then
+		1->H
+		Goto EE
+	End
+	If R:Then
+		1->R
+		Goto EE
+	End
+	If T:Then
+		1->T
+		Goto EE
+	End
+	If Y:Then
+		1->Y
+		Goto EE
+	End
+	Lbl EE
+	Z-10->Z
+	Text(46,25,"          
+End
+Text(46,25,Z
+If Z>21:Then
+	Text(25,40,"PLAYER BUSTS
+	For(X,1,500
+	End
+	If |LF(1)=14:Then
+		If U=3 or U=4
+		U+1->U
+		If U=4
+		Goto TT
+	End
+	Goto 0
+End
+If G=13
+Goto 5
+
+
+
+Text(56,0,"           
+Text(56,41,"           
+0->G
+While 1
+	getKey->G
+	While G=0
+		getKey->G
+	End
+	If G=12
+	Goto 5
+	If G=45
+	Goto XY
+End
+
+
+
+Lbl PP
+ClrDraw
+Text(20,25,"YOU NO LONGER
+Text(27,17,"HAVE ENOUGH MONEY
+Text(40,32,"GAME OVER
+~15->A
+15->B
+Repeat A=.12
+	Vertical A
+	Vertical B
+	A+.21->A
+	B-.21->B
+End
+
+
+Lbl XY
+ClrDraw
+AxesOn
+CoordOn
+ClrHome
+Disp 
+DelVar A:DelVar B:DelVar C:DelVar D:DelVar E:DelVar F:DelVar G:DelVar H:DelVar I:DelVar J:DelVar K:DelVar L:DelVar M:DelVar N:DelVar O:DelVar P:DelVar Q:DelVar R:DelVar S:DelVar T:DelVar U:DelVar V:DelVar W:DelVar X:DelVar Y:DelVar Z:DelVar theta
+0->Zthetamin:10->ZTmin:0->thetaMin
+Stop

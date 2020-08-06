@@ -1,0 +1,104 @@
+ClrHome
+22->dim(|LA)
+Menu("FAVORITE ANIMAL","CAT",A,"DOG",B
+Lbl A
+1+|LA(1)->|LA(1
+Goto 0
+Lbl B
+1+|LA(2)->|LA(2
+Lbl 0
+Menu("FAVORITE NUMBER","2",C,"3",D
+Lbl C
+1+|LA(3)->|LA(3
+Goto 1
+Lbl D
+1+|LA(4)->|LA(4
+Lbl 1
+Menu("BEST WORD","MOIST",E,"USED",F
+Lbl E
+1+|LA(5)->|LA(5
+Goto 2
+Lbl F
+1+|LA(6)->|LA(6
+Lbl 2
+Menu("FAVORITE SUBJECT","MATH",G,"ENGLISH",H
+Lbl G
+1+|LA(7)->|LA(7
+Goto 3
+Lbl H
+1+|LA(8)->|LA(8
+Lbl 3
+Menu("FAV BODY PART","NOSE",I,"EAR",J
+Lbl I
+1+|LA(9)->|LA(9
+Goto 4
+Lbl J
+1+|LA(10)->|LA(10
+Lbl 4
+Menu("BEST BROWSER","INET EXPLORER",K,"FIREFOX",L
+Lbl K
+1+|LA(11)->|LA(11
+Goto 5
+Lbl L
+1+|LA(12)->|LA(12
+Lbl 5
+Menu("FAVORITE PERSON","STEVE KLEEMAN",M,"OTHER",N
+Lbl M
+1+|LA(13)->|LA(13
+Goto 6
+Lbl N
+1+|LA(14)->|LA(14
+Lbl 6
+Menu("BEST GAME","MONOPOLY",O,"RISK",P
+Lbl O
+1+|LA(15)->|LA(15
+Goto 7
+Lbl P
+1+|LA(16)->|LA(16
+Lbl 7
+Menu("PICK ONE","18 MONTHS",Q,"1.5 YEARS",R
+Lbl Q
+1+|LA(17)->|LA(17
+Goto 8
+Lbl R
+1+|LA(18)->|LA(18)
+Lbl 8
+Menu("PICK ONE","PEN",S,"PENCIL",T
+Lbl S
+1+|LA(19)->|LA(19
+Goto 9
+Lbl T
+1+|LA(20)->|LA(20
+Lbl 9
+Menu("YOUR GENDER","MALE",U,"FEMALE",V
+Lbl U
+1+|LA(21)->|LA(21
+Goto thetatheta
+Lbl V
+1+|LA(22)->|LA(22
+Lbl thetatheta
+ClrDraw
+0->Xmin
+22->Xmax
+0->Ymin
+10->Ymax
+0->B
+Repeat B=22
+	1+B->B
+	Line(B,0,B,|LA(B
+End
+For(X,1,1000
+End
+0->P
+randInt(1,9)->Q
+Repeat P=3
+	ClrDraw
+	If Q=6:Then
+		Text(30,30,"YOU WIN!
+	Else
+		Text(30,30,"YOU LOSE!
+	End
+	For(X,1,50
+	End
+	P+1->P
+End

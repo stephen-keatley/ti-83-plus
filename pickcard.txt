@@ -1,0 +1,26 @@
+"PICK NUMBERS
+
+10->X
+randInt(1,50,X)->|LCARDS
+
+"IF SAME NUMBER ADD ONE
+For(I,1,X
+	
+	For(J,I+1,X
+		If |LCARDS(J)=|LCARDS(I):Then
+			|LCARDS(J)+1->|LCARDS(J
+			If |LCARDS(J)>50:Then
+				1->|LCARDS(J
+				1->I
+				2->J
+			End
+		End
+	End
+End
+
+"ONLY 1-13
+For(I,1,X
+	While |LCARDS(I)>13
+		|LCARDS(I)-13->|LCARDS(I
+	End
+End
